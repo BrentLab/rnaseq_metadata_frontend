@@ -122,6 +122,18 @@ function App() {
         addNewSamplesFormData={addNewSamplesFormData}
         alertUserError={alertUserError}
     />
+
+  useEffect(() => {
+
+    table_state_data.post_error.message !== "" && 
+    alertUserError("Communication with database failed! \n\n"+table_state_data.post_error.message+"\n\nRequest Details:\n\n"+JSON.stringify(table_state_data.post_error.config))
+  }, [table_state_data.post_error])
+
+  useEffect(() => {
+    table_state_data.post_response.message !== "" && 
+    alertUserError("Communication with database succeeded! \n\n"+table_state_data.post_response.message+"\n\nStatus:\n\n"+table_state_data.post_response.status)
+  }, [table_state_data.post_response])
+
   return (
     <>
       <ModalFrame 

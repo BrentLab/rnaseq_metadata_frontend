@@ -3,8 +3,8 @@ import {
     LOGOUT,
     GET_TABLE_OPTIONS,
     GET_PAGINATED_DATA,
-    POST_RECORD,
-    PATCH_RECORD
+    POST_RESPONSE,
+    POST_ERROR
 } from "../database_api/index.js";
 
 
@@ -22,7 +22,9 @@ const initialState = {
     selected_table: "",
     table_options: {},
     table_fields: [],
-    table_data: []
+    table_data: [],
+    post_error: {message: "", name: "", config: {}},
+    post_response: {status: "", message: ""}
 };
 
 /**
@@ -35,6 +37,16 @@ export default function (state = initialState, action) {
     switch (action.type) {
         default:
             return state;
+        case LOGIN:
+            return {
+                ...state,
+                login: {token: action.payload.token, username: action.payload.username}
+            } 
+        case LOGOUT:
+            return {
+                ...state,
+                login: {}
+            }
         case GET_TABLE_OPTIONS:
             const primary_key = JSON.parse(action.payload.description).primary_key
             const foreign_key = JSON.parse(action.payload.description).foreign_key
@@ -52,15 +64,15 @@ export default function (state = initialState, action) {
                 // table_fields: Object.keys(action.payload[0]),
                 table_data: action.payload
             };
-        case LOGIN:
+        case POST_RESPONSE:
             return {
                 ...state,
-                login: {token: action.payload.token, username: action.payload.username}
-            } 
-        case LOGOUT:
+                post_response: action.payload
+            }  
+        case POST_ERROR:
             return {
                 ...state,
-                login: {}
+                post_error: action.payload
             } 
     }
 }

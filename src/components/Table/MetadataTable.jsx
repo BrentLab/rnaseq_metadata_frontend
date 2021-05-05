@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Container from "react-bootstrap/cjs/Container";
 import Col from "react-bootstrap/cjs/Col";
 import Row from "react-bootstrap/cjs/Row";
@@ -8,7 +9,7 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types'
 import {TableBody, TableHeader} from "./TableStructure"
 import {ColumnSelector, FilterForm, FilterList, TableData} from "./TableTools"
-import { removeColumnFromList } from "../../store/database_api/actions"
+import { removeColumnFromList, postData } from "../../store/database_api/actions"
 import config from "../../config"
 
 /**
@@ -28,6 +29,10 @@ import config from "../../config"
  * @todo clean up the useEffect --> i am still figuring out how to use the hooks correctly
  */
 const MetadataTable = props => {
+    
+    // todo: figure out a better way of doing this
+    // pass this to any function that is communicating with the redux store
+    const dispatch = useDispatch()
 
     /**
      * the new_record_obj is the json object that stores the new records a user enters in the entry table.
@@ -240,7 +245,7 @@ const MetadataTable = props => {
     })
     
     console.log(Object.values(filtered_record_obj))
-    //postData(new_samples_form_data.table, Object.values(filtered_record_obj), table_state_data.login.token, dispatch)
+    postData(props.new_samples_form_data.table, Object.values(filtered_record_obj), table_state_data.login.token, dispatch)
   }
 
 /**

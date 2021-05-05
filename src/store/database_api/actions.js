@@ -3,13 +3,12 @@ import config from '../../config.json'
 
 import {
     LOGIN,
-    SIGNUP,
+    LOGOUT,
     GET_TABLE_OPTIONS,
     GET_PAGINATED_DATA,
     POST_DATA,
-    PATCH_RECORD,
-    HTTP_RESPONSE,
-    LOGOUT
+    POST_ERROR,
+    POST_RESPONSE
 } from "./index";
 
 export const getTableList = () => {
@@ -24,7 +23,6 @@ export const getTableList = () => {
 * @param {object} login_object in form {username: asdf, password: pass1234}
 * @todo add test
 * @todo make url path with function that handles / or somehow note that it needs to be included in the config
-* @todo send error to error handler function to display to user
 */
 export const loginUser = (login_object, dispatch) => {
 
@@ -32,17 +30,20 @@ export const loginUser = (login_object, dispatch) => {
     axios
         .post(url, login_object)
         .then((res => {
-            const response = {
-                message: res.statusText,
-                status: res.status
-            };
             dispatch({
                 type: LOGIN,
                 payload: {token: res.data.token, username: login_object.username}
             });
+            dispatch({
+                type: POST_RESPONSE,
+                payload: {message: res.statusText, status: res.status }
+            });
         }))
         .catch(err => {
-            console.error("error POST: " + err)
+             dispatch({
+                type: POST_ERROR,
+                payload: {message: err.message, name: err.name, config: err.config}
+            });
         })
 };
 
@@ -160,7 +161,7 @@ export const getPreviousTableOptions = (tablename, authorization_token) =>{
 * @param {object} dispatch the useDispatch() function -- see todo in OPTIONS request
 * @todo add test
 * @todo make url path with function that handles / or somehow note that it needs to be included in the config
-* @todo send error to error handler function to display to user
+* @todo figure out how to capture the better error response from the database -- it does actually send back a reason why it rejects (eg "that option for column x doesn't work")
 */
 export const postData = (tablename, data, authorization_token, dispatch) => {
     const url = config.DATABASE_API_ROOT + tablename + '/'
@@ -172,17 +173,15 @@ export const postData = (tablename, data, authorization_token, dispatch) => {
     axios
         .post(url, data, {headers: headers})
         .then((res => {
-            const response = {
-                message: res.statusText,
-                status: res.status
-            };
-            console.log(response)
             dispatch({
-                type: HTTP_RESPONSE,
-                payload: {post_response: response, variant: "success"}
+                type: POST_RESPONSE,
+                payload: {message: res.statusText, status: res.status }
             });
         }))
         .catch(err => {
-            console.error("error POST: " + err)
+            dispatch({
+                type: POST_ERROR,
+                payload: {message: err.message, name: err.Name, config: err.config, full:err}
+            });
         })
 };
