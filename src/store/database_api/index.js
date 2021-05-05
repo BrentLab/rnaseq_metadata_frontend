@@ -1,0 +1,8 @@
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
+export const GET_TABLE_OPTIONS = "GET_TABLE_OPTIONS";
+export const GET_PAGINATED_DATA = "GET_PAGINATED_DATA"
+export const POST_DATA = "POST_RECORD";
+export const PATCH_RECORD = "PATCH_RECORD";
+export const HTTP_RESPONSE = "HTTP_RESPONSE";
+export const REMOVE_COLUMN_FROM_OPTIONS = "REMOVE_COLUMN_FROM_OPTIONS";

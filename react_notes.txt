@@ -1,0 +1,42 @@
+Bit and storybook for development and documentation
+
+https://blog.bitsrc.io/how-is-bit-dev-different-from-storybook-892b373733bd
+
+another option --> leaning this way b/c it reads jsdocs style comments, proptypes, etc
+https://react-styleguidist.js.org/
+https://react-styleguidist.js.org/docs/documenting/
+
+simple guide on using stylebook
+https://www.smashingmagazine.com/2020/09/building-react-apps-storybook/
+
+react cosmos
+https://hackernoon.com/tools-you-need-to-use-in-your-react-components-development-26c3de4f81d2
+
+---------------------------------------------------------------
+
+include index.js in directories with lots of components
+https://stackoverflow.com/a/31402500/9708266
+
+
+Just a variation on the theme already provided in the answer, but how about this:
+
+In a Thing,
+
+export default function ThingA () {}
+
+In things/index.js,
+
+export {default as ThingA} from './ThingA'
+export {default as ThingB} from './ThingB'
+export {default as ThingC} from './ThingC'
+
+Then to consume all the things elsewhere,
+
+import * as things from './things'
+things.ThingA()
+
+Or to consume just some of things,
+
+import {ThingA,ThingB} from './things'
+
+-------------------------------------------------------
