@@ -31,11 +31,13 @@ sudo apt install nodejs npm
     "CODEBASE_DOCUMENTATION": "http://18.116.65.9/docs/frontend/0.1.0/"
 }
 ```
-4. Run either `npm run build_dev` (the name does need to be changed -- it installs, it does not build) or simply run `npm install`. However, note the NOTE in big and bold below. There is an open issue as of 20210505 with a create-react-app dependency that conflicts with new versions of `npm`. To "fix" it currently, run `npm update --legacy-peer-deps` after `npm install`. Keep an eye on the issue though -- this should be resolved at some point. See this [issue report](https://github.com/facebook/create-react-app/issues/10811)
+4. `npm install`. However, __NOTE__: There is an open issue as of 20210505 with a create-react-app dependency that conflicts with new versions of `npm`. To "fix" it currently, run `npm update --legacy-peer-deps` after `npm install`. Keep an eye on the issue though -- this should be resolved at some point. See this [issue report](https://github.com/facebook/create-react-app/issues/10811)
 
 5. Look through the documentation, and the code. Choose an `@todo` to work on. Register the issue on the __brentlab__ github repo (not your fork). Please look through the `@todo` first, but if your issue isn't already noted in the `@todo`, just register a new issue on n the __brentlab__ github repo. 
 
-6. Create a branch (in your local repo), name it something descriptive related to the issue report, and knock out that `@todo`/issue. Commit frequently. However, when you're feature is done, squish down your commits so that the log isn't littered, rebase your branch, and merge with your master branch. [See this for help](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) or ask chasem@wustl.edu. Make sure your master branch on github is up to date with your local (including these git log revisions/etc), and issue a pull request to the __brentlab__ github repo.
+- __Important__: If you have not configured your local computer for git, then [follow these instructions from git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration). In particular, use the commit.template.
+
+6. Create a branch (in your local repo), name it something descriptive related to the issue report, and knock out that `@todo`/issue. Use the 'issue' number as the Ticket: _number_ in your commit messages. Commit frequently. However, when your feature is done, squish down your commits so that the log isn't littered, rebase your branch, and merge with your master branch. [See this for help](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) or ask chasem@wustl.edu. Make sure your master branch on github is up to date with your local (including these git log revisions/etc), and issue a pull request to the __brentlab__ github repo.
 
 ## some items to note:
 
