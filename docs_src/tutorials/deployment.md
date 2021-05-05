@@ -50,7 +50,7 @@
 ```
 sudo apt update
 sudo apt upgrade
-sudo apt install nginx
+sudo apt install nginx nodejs npm
 ```
 _note: if apache is already running, you'll need to disable it at this point (not applicable to AWS, just a note in case you're using a different ubuntu system)_
 
