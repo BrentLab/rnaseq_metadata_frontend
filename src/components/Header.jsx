@@ -112,7 +112,7 @@ const Header = props => {
                             <Nav.Link onClick={addSampleClickHandler}>Add New Samples</Nav.Link>
                             {/* <Nav.Link onClick={(event) => props.qualityMetricsToggle(event)}>Quality Metrics</Nav.Link> */}
                             <Nav.Link href="https://cmatkhan.shinyapps.io/yeast_zev_experiments_2/?_ga=2.74716626.1333156210.1619550390-368285056.1619298418" _target="blank" >Quality Metrics</Nav.Link>
-                            <Nav.Link href="http://18.116.65.9/docs/" _target="blank" >Code base documentation</Nav.Link>
+                            <Nav.Link href={config.CODEBASE_DOCUMENTATION} _target="blank" >Code base documentation</Nav.Link>
                             </Nav>
                                 {login_logout_request_cred_btn}
                             <Nav>

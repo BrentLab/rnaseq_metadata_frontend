@@ -1,6 +1,6 @@
 ## Welcome to the development documentation of the Brentlab RNAseq metadata front end  
 
-This documentation is intended for developers. Far more thorough documentation is available if you clone the repo, run `npm run docs`, and then launch the index.html in the `docs` directory.
+This documentation is intended for developers. Far more thorough documentation is available if you clone the repo, run `npm run docs`, and then launch the index.html in the `docs` directory. Or, try [here](http://18.116.65.9/docs/frontend/0.1.0/)
 
 ## Make sure you have node and npm
 If you are on an ubuntu system, you can download them like so:
@@ -27,7 +27,8 @@ sudo apt install nodejs npm
     "SERVER_ROOT": "http://3.21.241.229/",
     "MAX_NEW_SAMPLES": 100,
     "FIRST_TABLE": "BioSample",
-    "CREDENTIALS_ERROR_MSG": "You have not signed in. Sign in using your issued credentials, or email chasem@wustl.edu for new credentials"
+    "CREDENTIALS_ERROR_MSG": "You have not signed in. Sign in using your issued credentials, or email chasem@wustl.edu for new credentials",
+    "CODEBASE_DOCUMENTATION": "http://18.116.65.9/docs/frontend/0.1.0/"
 }
 ```
 4. Run either `npm run build_dev` (the name does need to be changed -- it installs, it does not build) or simply run `npm install`. However, note the NOTE in big and bold below. There is an open issue as of 20210505 with a create-react-app dependency that conflicts with new versions of `npm`. To "fix" it currently, run `npm update --legacy-peer-deps` after `npm install`. Keep an eye on the issue though -- this should be resolved at some point. See this [issue report](https://github.com/facebook/create-react-app/issues/10811)

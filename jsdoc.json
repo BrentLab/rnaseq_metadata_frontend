@@ -46,10 +46,10 @@
             "navLinks": [
                 {
                     "label": "Github",
-                    "href": "https://github.com/SoftwareBrothers/admin-bro"
+                    "href": "https://github.com/BrentLab/rnaseq_metadata_frontend"
                 },
                 {
-                    "label": "Example Application",
+                    "label": "Example Deployment",
                     "href": "http://18.116.65.9"
                 }
             ]
