@@ -1,5 +1,7 @@
 ## Welcome to the development documentation of the Brentlab RNAseq metadata front end  
 
+[![Build Status](https://www.travis-ci.com/BrentLab/rnaseq_metadata_frontend.svg?branch=main)](https://www.travis-ci.com/BrentLab/rnaseq_metadata_frontend)  
+
 This documentation is intended for developers. Far more thorough documentation is available if you clone the repo, run `npm run docs`, and then launch the index.html in the `docs` directory. Or, try [here](http://18.116.65.9/docs/frontend/0.1.0/)
 
 ## Make sure you have node and npm
@@ -12,7 +14,7 @@ sudo apt install nodejs npm
 ## Installation (ie, building this on a server and serving it)
 1. navigate into whatever system from which you plan to serve
 2. git clone this repository
-3. __CRITICAL__: follow step 3 in the 'Contribution workflow section below'
+3. __CRITICAL__: follow step 3 in the 'Contribution workflow' section below
 4. `npm install`. Note: there is a problem with a create-react-app dependency and npm 7+, which you're likely using. See Step 4 in "Contribute workflow" at the sentence that starts To "fix"...
 5. `npm run build` You may move the `build/` directory, which results from this cmd, to anywhere on your system from which you want to serve the files. A common spot on ubuntu would be `/var/www/`
 ## Contribution workflow
