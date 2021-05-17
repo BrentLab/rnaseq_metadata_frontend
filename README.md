@@ -24,6 +24,7 @@ sudo apt install nodejs npm
 
 ```
 {
+    "ORGANISM": "KN99",
     "PUBLIC_TABLES_URL": "http://3.21.241.229/metadata_tables/",
     "DATABASE_API_ROOT": "http://3.21.241.229/api/v1/",
     "SERVER_ROOT": "http://3.21.241.229/",
