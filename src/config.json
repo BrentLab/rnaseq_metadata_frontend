@@ -1,4 +1,5 @@
 {
+    "ORGANISM": "KN99",
     "PUBLIC_TABLES_URL": "http://18.224.181.136/metadata_tables/",
     "DATABASE_API_ROOT": "http://18.224.181.136/api/v1/",
     "SERVER_ROOT": "http://18.224.181.136/",
