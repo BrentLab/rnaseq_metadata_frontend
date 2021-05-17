@@ -2,7 +2,7 @@
 
 [![Build Status](https://www.travis-ci.com/BrentLab/rnaseq_metadata_frontend.svg?branch=main)](https://www.travis-ci.com/BrentLab/rnaseq_metadata_frontend)  
 
-This documentation is intended for developers. Far more thorough documentation is available if you clone the repo, run `npm run docs`, and then launch the index.html in the `docs` directory. Or, try [here](http://18.116.65.9/docs/frontend/0.1.0/)
+[This documentation is intended for developers](https://brentlab.github.io/rnaseq_metadata_frontend/). For more user focused documentation, see [__here__](https://rnaseq-databases-documentation.readthedocs.io/en/latest/?badge=latest)
 
 ## Make sure you have node and npm
 If you are on an ubuntu system, you can download them like so:
