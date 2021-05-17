@@ -5,6 +5,7 @@ import MetadataTable from "./components/Table/MetadataTable"
 import QualityMetricsDashboard from "./components/QualityMetrics/QualityMetricsDashboard"
 import ModalFrame from "./components/Modal/ModalFrame.jsx"
 import { getTableList, postData } from "./store/database_api/actions"
+import config from "./config.json"
 
 // TODO: I had wrapped the app in thep provider here, but moved the provider/store (redux) out to index.js. update this b/c it now has access to the store (if needed -- may not be. in fact, maybe take the redux/store out all together)
 
@@ -146,7 +147,7 @@ function App() {
 
       />
       <Header 
-          database_name='Yeast Metadata'
+          database_name={config.ORGANISM + ' Metadata'}
           table_array={table_array} 
           entryTableToggle={entryTableToggle}
           selected_table = {selected_table} 
