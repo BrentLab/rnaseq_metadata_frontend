@@ -1,1 +1,9 @@
-
+{
+    "PUBLIC_TABLES_URL": "http://18.224.181.136/metadata_tables/",
+    "DATABASE_API_ROOT": "http://18.224.181.136/api/v1/",
+    "SERVER_ROOT": "http://18.224.181.136/",
+    "MAX_NEW_SAMPLES": 100,
+    "FIRST_TABLE": "BioSample",
+    "CREDENTIALS_ERROR_MSG": "You have not signed in. Sign in using your issued credentials, or email chasem@wustl.edu for new credentials",
+    "CODEBASE_DOCUMENTATION": "https://brentlab.github.io/rnaseq_metadata_frontend/"
+}
